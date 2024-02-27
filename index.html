@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Estatura</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            background-color: #f0f5fd;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #app {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        #loading, #result {
+            display: none;
+        }
+
+        #inputSection {
+            margin-top: 20px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 16px;
+            border: 1px solid #d2e0f7;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #estaturaResultado {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div id="app">
+        <h1 class="text-3xl font-bold mb-6 text-blue-800">Calculadora de Estatura</h1>
+        <div id="loading">
+            <h1 class="text-4xl font-bold mb-4 text-blue-800">Calculando...</h1>
+            <p class="text-sm font-bold mb-4 text-blue-800">Este proceso puede demorar</p>
+            <div class="animate-spin rounded-full h-16 w-16 mx-auto border-t-2 border-blue-700"></div>
+        </div>
+        <div id="result">
+            <h1 class="text-4xl font-bold mb-4 text-blue-800">Tu estatura es:</h1>
+            <p id="estaturaResultado"></p>
+        </div>
+
+        <div id="inputSection">
+            <label for="estatura" class="text-lg text-blue-800 font-semibold block">Ingresa tu estatura (en cm):</label>
+            <input placeholder="170" id="estatura" class="border border-blue-500 rounded-md" />
+            <button onclick="calcularEstatura()">Calcular</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
